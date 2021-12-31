@@ -1,6 +1,9 @@
 void oddelovac()
 {
-	printf("+---+---+---+---+---+---+---+---+\n");
+	printf("+");
+	for (char i = 0; i < vindex; i++)
+		printf("---+");
+	printf("\n");
 }
 
 void bunka(char figurka)
@@ -25,12 +28,12 @@ void bunka(char figurka)
 	}
 }
 
-void radek(bool nalevo, char figurka[4])
+void radek(bool nalevo, char figurka[mindex])
 {
 	printf("|");
 	if (nalevo)
 	{
-		for (char i = 0; i < 4; i++)
+		for (char i = 0; i < mindex; i++)
 		{
 			bunka(figurka[i]);
 			bunka(0);
@@ -38,7 +41,7 @@ void radek(bool nalevo, char figurka[4])
 	}
 	else
 	{
-		for (char i = 0; i < 4; i++)
+		for (char i = 0; i < mindex; i++)
 		{
 			bunka(0);
 			bunka(figurka[i]);
@@ -50,14 +53,33 @@ void radek(bool nalevo, char figurka[4])
 void zobrazit()
 {
 	system("clear");
-	for (char i = 0; i < 4; i++)
+	for (char i = 0; i < mindex; i++)
 	{
 		oddelovac();
-		//radek(0, sachovnice[i*2]);
-		radek(0, (sachovnice + i*2*4));
+		radek(0, (sachovnice + i*2*mindex));
 		oddelovac();
-		//radek(1, sachovnice[i*2+1]);
-		radek(1, (sachovnice + (i*2+1)*4));
+		radek(1, (sachovnice + (i*2+1)*mindex));
+	}
+	oddelovac();
+}
+
+//Turecká dáma
+
+void radekT(char figurka[mindex])
+{
+	printf("|");
+	for (char i = 0; i < mindex; i++)
+		bunka(figurka[i]);
+	printf("\n");
+}
+
+void zobrazitT()
+{
+	system("clear");
+	for (char i = 0; i < vindex; i++)
+	{
+		oddelovac();
+		radekT(sachovnice + i*8);
 	}
 	oddelovac();
 }
