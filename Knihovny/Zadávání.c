@@ -1,4 +1,4 @@
-int zadej(char* hlaska, int min, int max)
+char zadej(char* hlaska, int min, int max)
 {
 	int a;
 	do
@@ -33,5 +33,5 @@ void vyberpravidel()
 	printf("2 - Anglická\n");
 	printf("3 - Polská\n");
 	printf("4 - Turecká\n");
-	zadej("Zadej, podle kterých pravidel si přeješ hrát: ", 1, 4);
+	pravidla = zadej("Zadej, podle kterých pravidel si přeješ hrát: ", 1, 4);
 }

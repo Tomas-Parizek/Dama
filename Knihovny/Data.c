@@ -3,7 +3,7 @@ char *sachovnice;
 // Nastavení
 
 bool bila = true;
-char pravidla = 4;
+char pravidla;
 char mindex, vindex;
 
 void sachovnicezapis(char rada, char bunka, char hodnota)
@@ -111,3 +111,9 @@ void vytvorsachovnici()
 	}
 }
 
+void zapisbarvu(char a)
+{
+	if (a == 1) bila = true;
+	else if (a == 2) bila = false;
+	else bila = rand()%2;
+}
