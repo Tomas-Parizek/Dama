@@ -53,9 +53,11 @@ void zobrazit()
 	for (char i = 0; i < 4; i++)
 	{
 		oddelovac();
-		radek(0, sachovnice[i*2]);
+		//radek(0, sachovnice[i*2]);
+		radek(0, (sachovnice + i*2*4));
 		oddelovac();
-		radek(1, sachovnice[i*2+1]);
+		//radek(1, sachovnice[i*2+1]);
+		radek(1, (sachovnice + (i*2+1)*4));
 	}
 	oddelovac();
 }

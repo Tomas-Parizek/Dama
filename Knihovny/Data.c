@@ -1,10 +1,19 @@
-char sachovnice[8][4];
-//char *sachovnice;
+//char sachovnice[8][4];
+char *sachovnice;
 
 // Nastavení
 
 bool bila = true;
 char pravidla = 1;
+
+void sachovnicezapis(char rada, char bunka, char hodnota)
+{
+	/*
+		první index - řádek - pozice.cislo
+		druhý index - pozice - pozice.znak
+	*/
+	*(sachovnice + rada*4 + bunka) = hodnota;
+}
 
 void vypln()
 {
@@ -21,15 +30,15 @@ void vypln()
 	}
 	for (char i = 0; i < 3; i++)
 		for (char j = 0; j < 4; j++)
-			sachovnice[i][j] = prvni;
+			sachovnicezapis(i, j, prvni);
 
 	for (char i = 3; i < 5; i++)
 		for (char j = 0; j < 4; j++)
-			sachovnice[i][j] = 0;
+			sachovnicezapis(i, j, 0);
 
 	for (char i = 5; i < 8; i++)
 		for (char j = 0; j < 4; j++)
-			sachovnice[i][j] = druhy;
+			sachovnicezapis(i, j, druhy);
 }
 
 void vytvorsachovnici()
@@ -50,5 +59,3 @@ void vytvorsachovnici()
 	}
 }
 
-void pristup(POZICE pozice)
-{}
