@@ -20,7 +20,6 @@ POZICE zadejpozici(char *hlaska)
 		a.cislo -= 48;
 		if (a.znak > 72) a.znak -= 32;
 		a.znak -= 64;
-		printf("%d%d", (int)a.znak, (int)a.cislo);
 	} while (a.cislo < 1 || a.cislo > 8 || a.znak < 1 || a.znak > 8);
 	return a;
 }

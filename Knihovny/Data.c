@@ -16,7 +16,7 @@ void sachovnicezapis(char rada, char bunka, char hodnota)
 
 char sachovnicecteni(POZICE pozice)
 {
-	return *(sachovnice + pozice.cislo*mindex + pozice.znak);
+	return 'a'; // Dopsat
 }
 
 void pd(char *a, char *b)
