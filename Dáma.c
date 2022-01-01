@@ -6,6 +6,7 @@
 #include "Knihovny/Data.c"
 #include "Knihovny/Zadávání.c"
 #include "Knihovny/Vykreslování.c"
+#include "Knihovny/Hraní.c"
 #include "Knihovny/Hry.c"
 
 int main()
