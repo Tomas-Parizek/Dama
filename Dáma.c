@@ -12,10 +12,9 @@
 int main()
 {
 	srand(time(NULL));
+	//vybertypu(); // - Bude použit až později
 	vyberpravidel();
-	system("clear");
-	printf("1 - Bílá\n2 - Červená\n3 - Náhodně\n");
-	zapisbarvu(zadej("Se kterou barvou si přeješ dámu hrát?: ", 1, 3));
+	vyberbarvy();
 	vytvorsachovnici();
 
 	if (pravidla == 1) ceska();

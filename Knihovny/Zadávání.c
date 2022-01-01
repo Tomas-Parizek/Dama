@@ -35,3 +35,20 @@ void vyberpravidel()
 	printf("4 - Turecká\n");
 	pravidla = zadej("Zadej, podle kterých pravidel si přeješ hrát: ", 1, 4);
 }
+
+void vyberbarvy()
+{
+	system("clear");
+	printf("1 - Bílá\n");
+	printf("2 - Červená\n");
+	printf("3 - Náhodně\n");
+	zapisbarvu(zadej("Se kterou barvou si přeješ dámu hrát?: ", 1, 3));
+}
+
+void vybertypu()
+{
+	system("clear");
+	printf("1 - Hráč proti počítači\n");
+	printf("2 - Hráč proti hráči\n");
+	typ = zadej("Jakým způsobem si přeješ dámu hrát?: ", 1, 2);
+}

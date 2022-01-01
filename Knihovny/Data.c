@@ -5,7 +5,10 @@ char *sachovnice;
 bool bila = true;
 char pravidla;
 char mindex, vindex;
+char typ;
 
+
+//Nastavování dat
 void sachovnicezapis(char rada, char bunka, char hodnota)
 {
 	*(sachovnice + rada*mindex + bunka) = hodnota;
@@ -25,21 +28,21 @@ void pd(char *a, char *b)
 	}
 }
 
+void vyplnrady(char prvni, char posledni, char obsah)
+{
+	for (char i = prvni; i < posledni; i++)
+		for (char j = 0; j < mindex; j++)
+			sachovnicezapis(i, j, obsah);
+}
+
 void vypln()
 {
 	char prvni, druhy;
 	pd (&prvni, &druhy);
-	for (char i = 0; i < 3; i++)
-		for (char j = 0; j < 4; j++)
-			sachovnicezapis(i, j, prvni);
 
-	for (char i = 3; i < 5; i++)
-		for (char j = 0; j < 4; j++)
-			sachovnicezapis(i, j, 0);
-
-	for (char i = 5; i < 8; i++)
-		for (char j = 0; j < 4; j++)
-			sachovnicezapis(i, j, druhy);
+	vyplnrady(0, 3, prvni);
+	vyplnrady(3, 5, 0);
+	vyplnrady(5, 8, druhy);
 }
 
 void vyplnP()
@@ -47,17 +50,10 @@ void vyplnP()
 	char prvni, druhy;
 	pd (&prvni, &druhy);
 
-	for (char i = 0; i < 4; i++)
-		for (char j = 0; j < 5; j++)
-			sachovnicezapis(i, j, prvni);
+	vyplnrady(0, 4, prvni);
+	vyplnrady(4, 6, 0);
+	vyplnrady(6, 10, druhy);
 
-	for (char i = 4; i < 6; i++)
-		for (char j = 0; j < 5; j++)
-			sachovnicezapis(i, j, 0);
-
-	for (char i = 6; i < 10; i++)
-		for (char j = 0; j < 5; j++)
-			sachovnicezapis(i, j, druhy);
 }
 
 void vyplnT()
@@ -65,25 +61,11 @@ void vyplnT()
 	char prvni, druhy;
 	pd (&prvni, &druhy);
 
-	for (char i = 0; i < 1; i++)
-		for (char j = 0; j < 8; j++)
-			sachovnicezapis(i, j, 0);
-
-	for (char i = 1; i < 3; i++)
-		for (char j = 0; j < 8; j++)
-			sachovnicezapis(i, j, prvni);
-
-	for (char i = 3; i < 5; i++)
-		for (char j = 0; j < 8; j++)
-			sachovnicezapis(i, j, 0);
-
-	for (char i = 5; i < 7; i++)
-		for (char j = 0; j < 8; j++)
-			sachovnicezapis(i, j, druhy);
-
-	for (char i = 7; i < 8; i++)
-		for (char j = 0; j < 8; j++)
-			sachovnicezapis(i, j, 0);
+	vyplnrady(0, 1, 0);
+	vyplnrady(1, 3, prvni);
+	vyplnrady(3, 5, 0);
+	vyplnrady(5, 7, druhy);
+	vyplnrady(7, 8, 0);
 }
 
 void vytvorsachovnici()
