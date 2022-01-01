@@ -1,0 +1,4 @@
+void provedpohyb(POHYB pohyb)
+{
+	
+}

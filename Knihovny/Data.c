@@ -14,6 +14,11 @@ void sachovnicezapis(char rada, char bunka, char hodnota)
 	*(sachovnice + rada*mindex + bunka) = hodnota;
 }
 
+char sachovnicecteni(POZICE pozice)
+{
+	return *(sachovnice + pozice.cislo*mindex + pozice.znak);
+}
+
 void pd(char *a, char *b)
 {
 	if (bila)

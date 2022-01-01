@@ -1,6 +1,7 @@
 void ceska()
 {
 	zobrazit();
+	POZICE pozice = zadejpozici("Zadej pozici: ");
 }
 void anglicka()
 {
